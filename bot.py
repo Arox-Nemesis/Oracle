@@ -4,7 +4,7 @@ import asyncio
 import pyromod.listen
 from pyrogram import Client
 from pyrogram.enums import ParseMode
-import sys
+import sys, pytz
 from datetime import datetime
 #rohit_1888 on Tg
 from config import *
