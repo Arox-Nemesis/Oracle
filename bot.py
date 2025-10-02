@@ -14,6 +14,12 @@ name ="""
  BY CODEFLIX BOTS
 """
 
+def get_indian_time():
+    """Returns the current time in IST."""
+    ist = pytz.timezone("Asia/Kolkata")
+    return datetime.now(ist)
+
+
 
 class Bot(Client):
     def __init__(self):
@@ -32,7 +38,7 @@ class Bot(Client):
     async def start(self):
         await super().start()
         usr_bot_me = await self.get_me()
-        self.uptime = datetime.now()
+        self.uptime = get_indian_time()
 
         try:
             db_channel = await self.get_chat(CHANNEL_ID)
